@@ -14,15 +14,11 @@ namespace Player
         {
             lives = maxLives;
         }
-
-        // Update is called once per frame
-        void Update()
+        
+        public void SetLives(int value)
         {
-            if (lives == 0)
-            {
-                SceneManagement.LoadScene()
-            }
-            
+            lives = value;
         }
+
     }
 }
