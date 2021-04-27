@@ -7,7 +7,8 @@ namespace Player
     {
         public Transform gunPoint;
         public GameObject bullet;
-        
+        public Sprite bulletGraphics;
+
         private Input _input;
 
         private void Start()
@@ -17,10 +18,11 @@ namespace Player
 
         private void Update()
         {
-            if (_input.Shoot)
-            {
-                var clone = Instantiate(bullet, gunPoint.position, quaternion.identity);
-            }
+            if (!_input.Shoot) return;
+            
+            var clone = Instantiate(bullet, gunPoint.position, quaternion.identity);
+            clone.GetComponent<SpriteRenderer>().sprite = bulletGraphics;
+
         }
     }
 }
