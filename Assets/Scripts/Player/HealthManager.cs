@@ -6,7 +6,7 @@ namespace Player
     public class HealthManager : MonoBehaviour
     {
     
-        public int lives = 3;
+        public static int lives = 3;
         private int maxLives = 3;
         
         // Start is called before the first frame update
@@ -18,6 +18,16 @@ namespace Player
         public void SetLives(int value)
         {
             lives = value;
+        }
+        
+        public void AddLives()
+        {
+            lives++;
+        }
+        
+        public void ReduceLives
+        {
+            lives--;
         }
 
     }
