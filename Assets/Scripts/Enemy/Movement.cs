@@ -4,16 +4,13 @@ namespace Enemy
 {
     public class Movement : MonoBehaviour
     {
-        // Start is called before the first frame update
-        void Start()
-        {
+    
+        private float enemySpeed;
         
-        }
 
-        // Update is called once per frame
         void Update()
         {
-        
+            transform.Translate(Vector3.down * enemySpeed);
         }
     }
 }
