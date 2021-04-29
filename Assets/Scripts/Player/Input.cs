@@ -17,6 +17,8 @@ namespace Player
             _moveVector.y = (Keyboard.current.sKey.isPressed ? -1f : 0f) + (Keyboard.current.wKey.isPressed ? 1f : 0f);
 
             Shoot = Keyboard.current.spaceKey.wasPressedThisFrame;
+            
+            print(Shoot);
         }
     }
 }
