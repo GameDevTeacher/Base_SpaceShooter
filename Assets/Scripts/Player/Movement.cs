@@ -34,20 +34,5 @@ namespace Player
         // This function is CALLED 50 times per second
             // In it we update our physics velocity with the value of our input
             // and multiply it with a set speed
-           
-        /*    
-            private Vector2 _movement;
-            // This Variable is invisible in the Inspector and is only ACCESSIBLE in this Script.
-            // It is of type Vector2, it contains two Floats (x & y).
-
-        private void OnMove(InputValue value)
-        {
-            _movement = value.Get<Vector2>();
-        }
-
-        // This function is CALLED each time you interact with a Input (keyboard/gamepad)
-            // In it we GET the value of our Input and ASSIGN it to a variable
-            
-            */
     }
 }
