@@ -1,11 +1,14 @@
 using UnityEngine;
 
-public class ScoreManager: MonoBehaviour
+namespace Managers
 {
-    public static int score {get; private set;}
-    
-    public void AddScore()
+    public class ScoreManager: MonoBehaviour
     {
-        score++;
+        public static int Score {get; private set;}
+    
+        public void AddScore()
+        {
+            Score++;
+        }
     }
 }

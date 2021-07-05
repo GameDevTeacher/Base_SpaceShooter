@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace Projectiles
 {
-    public class Lifetime : MonoBehaviour
+    public class ProjectileLifetime : MonoBehaviour
     {
         public float lifeTime = 3f;
       

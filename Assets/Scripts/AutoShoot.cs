@@ -7,7 +7,7 @@ public class AutoShoot : MonoBehaviour
     public Transform gunPoint;
     
         [Tooltip("This Variable is how we access the Bullet Prefab and use it to create clones")]
-    public GameObject bullet;
+    public GameObject projectile;
     
         [Tooltip("This Variable allows us to change the graphics of the Bullet to avoid having multiple bullets")]
     public Sprite bulletGraphics;
@@ -21,14 +21,19 @@ public class AutoShoot : MonoBehaviour
         [Tooltip("This Variable decides the time between game start and the first shot")]
     public float startBuffer = 1f;
 
+        [Tooltip("This Variable is used to change the Tag of the projectile to be spawned")]
+    public new string tag;
+    
     private void Start()
     {
-        InvokeRepeating(nameof(Shooting), 1f, shootTime );
+        
+        InvokeRepeating(nameof(Shooting), startBuffer, shootTime );
     }
 
     private void Shooting()
     {
-        var clone = Instantiate(bullet, gunPoint.position, Quaternion.Euler(transform.eulerAngles));
+        var clone = Instantiate(projectile, gunPoint.position, Quaternion.Euler(transform.eulerAngles));
         clone.GetComponent<SpriteRenderer>().sprite = bulletGraphics;
+        clone.GetComponent<Transform>().tag = tag;
     }
 }

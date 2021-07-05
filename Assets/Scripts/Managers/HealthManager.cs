@@ -12,17 +12,17 @@ namespace Managers
             lives = MAXLives;
         }
         
-        public void SetLives(int value)
+        public static void SetLives(int value)
         {
             lives = value;
         }
         
-        public void AddLives()
+        public static void AddLives()
         {
             lives++;
         }
         
-        public void ReduceLives()
+        public static void ReduceLives()
         {
             lives--;
         }

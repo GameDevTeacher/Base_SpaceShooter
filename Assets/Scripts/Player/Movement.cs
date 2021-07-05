@@ -12,6 +12,8 @@ namespace Player
         [SerializeField] private float moveSpeed;
             // This Variable is visible in the Inspector and is only ACCESSIBLE in this Script.
             // It is of type Float (decimal numbers).
+
+        private float _slowSpeed;
             
         private Rigidbody2D _rigidbody2D;
             // This Variable is invisible in the Inspector and is only ACCESSIBLE in this Script;
@@ -19,6 +21,7 @@ namespace Player
             
         private void Start()
         {
+            _slowSpeed = moveSpeed / 2;
             _rigidbody2D = GetComponent<Rigidbody2D>();
             _input = GetComponent<Input>();
         }
@@ -27,7 +30,7 @@ namespace Player
             
         private void FixedUpdate()
         {
-            _rigidbody2D.velocity = _input.MoveVector * moveSpeed;
+            _rigidbody2D.velocity = _input.MoveVector.y > 0 ? _input.MoveVector * moveSpeed : _input.MoveVector * _slowSpeed;
         }
         // This function is CALLED 50 times per second
             // In it we update our physics velocity with the value of our input

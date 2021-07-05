@@ -3,14 +3,8 @@ using UnityEngine;
 
 namespace Player
 {
-    public class Shoot : MonoBehaviour
+    public class Beam : Shoot
     {
-        public Transform gunPoint;
-        public GameObject bullet;
-        public Sprite bulletGraphics;
-
-        protected Input input;
-
         private void Start()
         {
             input = GetComponent<Input>();

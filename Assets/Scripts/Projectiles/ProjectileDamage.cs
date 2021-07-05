@@ -1,22 +1,23 @@
+using Systems;
 using Managers;
-using Player;
 using UnityEngine;
 
 namespace Projectiles
 {
     public class ProjectileDamage : MonoBehaviour
     {
-
-        public string target = null;
-        private void OnCollisionEnter2D(Collision2D other)
+        private void OnTriggerEnter2D(Collider2D other)
         {
-
-            if (other.gameObject.GetComponent<HealthManager>() != null) return;
-        /*
-            Destroy(other.gameObject);
-            Destroy(gameObject);
-        */
-        
+            if (transform.CompareTag($"PlayerProjectile") && other.CompareTag($"Enemy"))
+            {
+                ObjectPooler.ReturnToPool(other.gameObject);
+                Destroy(gameObject);
+            }
+            else if (transform.CompareTag($"EnemyProjectile") && other.CompareTag($"Player"))
+            {
+                HealthManager.ReduceLives();
+                Destroy(gameObject);
+            }
         }
     }
 }

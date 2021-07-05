@@ -12,13 +12,15 @@ GameObject:
   - component: {fileID: 3116120682256171119}
   - component: {fileID: 3116120682256171113}
   - component: {fileID: 3116120682256171115}
-  - component: {fileID: 3116120682256171112}
   - component: {fileID: 8278506542828399435}
+  - component: {fileID: 2988089034338828404}
+  - component: {fileID: 6647909651047607686}
+  - component: {fileID: 3116120682256171112}
   - component: {fileID: 3116120682256171093}
   m_Layer: 7
   m_Name: Player
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 2800000, guid: 04f096344cad444d4ad6c58d110be39d, type: 3}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -34,6 +36,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 3116120682661111826}
+  - {fileID: 7388320584858733250}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -114,6 +117,56 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 4
+--- !u!114 &8278506542828399435
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3116120682256171116}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7a6b573e238744ada03ca21f79129e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gunPoint: {fileID: 3116120682661111826}
+  projectile: {fileID: 0}
+  bulletGraphics: {fileID: 21300000, guid: 1e05bc11b0cec487283e90f4a681b7b6, type: 3}
+  shootTime: 0.3
+  startBuffer: 1
+  tag: PlayerProjectile
+--- !u!114 &2988089034338828404
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3116120682256171116}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51c33469d17df4e89b742b903b13e2b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gunPoint: {fileID: 7388320584858733250}
+  bulletGraphics: {fileID: 21300000, guid: 130b4967def6b4e54b8ce3ace0880259, type: 3}
+  MAXRadius: 10
+  _expansionRate: 0.05
+  _transform: {x: 0, y: 0, z: 0}
+--- !u!114 &6647909651047607686
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3116120682256171116}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 517e5b6267efa496483413c487b956cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gunPoint: {fileID: 3116120682661111826}
+  bullet: {fileID: 0}
+  bulletGraphics: {fileID: 21300000, guid: a6f37932d30e74314aa180a9c57822c6, type: 3}
 --- !u!50 &3116120682256171112
 Rigidbody2D:
   serializedVersion: 4
@@ -134,24 +187,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
---- !u!114 &8278506542828399435
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3116120682256171116}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c7a6b573e238744ada03ca21f79129e4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gunPoint: {fileID: 3116120682661111826}
-  bullet: {fileID: 6277104527598610940, guid: 8468d882b42ec42f89f1c54676b73759, type: 3}
-  bulletGraphics: {fileID: 21300000, guid: 1e05bc11b0cec487283e90f4a681b7b6, type: 3}
-  shootTime: 0.3
-  startBuffer: 1
+  m_Constraints: 4
 --- !u!58 &3116120682256171093
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -198,3 +234,50 @@ Transform:
   m_Father: {fileID: 3116120682256171118}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &7620155188210234721
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7388320584858733250}
+  - component: {fileID: 1715430275}
+  m_Layer: 7
+  m_Name: BlastPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7388320584858733250
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7620155188210234721}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 3116120682256171118}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!58 &1715430275
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7620155188210234721}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.5

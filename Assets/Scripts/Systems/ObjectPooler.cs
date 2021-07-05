@@ -59,5 +59,12 @@ namespace Systems
         
             return obj;
         }
+        
+        public static void ReturnToPool(GameObject obj)
+        {
+            obj.SetActive(false);
+        }
     }
 }
+    
+    
