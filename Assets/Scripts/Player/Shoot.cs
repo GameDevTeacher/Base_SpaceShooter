@@ -1,7 +1,7 @@
 using Unity.Mathematics;
 using UnityEngine;
 
-namespace Actions
+namespace Player
 {
     public class Shoot : MonoBehaviour
     {
@@ -9,11 +9,11 @@ namespace Actions
         public GameObject bullet;
         public Sprite bulletGraphics;
 
-        private Player.PlayerInput.Input _input;
+        private Input _input;
 
         private void Start()
         {
-            _input = GetComponent<Player.PlayerInput.Input>();
+            _input = GetComponent<Input>();
         }
 
         private void Update()

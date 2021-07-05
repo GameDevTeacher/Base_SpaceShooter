@@ -1,18 +1,15 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
-namespace Player
+namespace Managers
 {
     public class HealthManager : MonoBehaviour
     {
-    
         public static int lives = 3;
-        private int maxLives = 3;
+        private const int MAXLives = 3;
         
-        // Start is called before the first frame update
-        void Start()
+        private void Awake()
         {
-            lives = maxLives;
+            lives = MAXLives;
         }
         
         public void SetLives(int value)
@@ -29,6 +26,5 @@ namespace Player
         {
             lives--;
         }
-
     }
 }

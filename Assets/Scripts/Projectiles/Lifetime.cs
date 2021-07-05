@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Bullet
+namespace Projectiles
 {
     public class Lifetime : MonoBehaviour
     {

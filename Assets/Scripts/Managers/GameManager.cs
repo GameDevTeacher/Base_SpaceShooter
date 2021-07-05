@@ -1,29 +1,24 @@
-using Player;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-
-enum Scenes
+namespace Managers
 {
-    WinScene,
-    MainMenu
-}
-public class GameManager: MonoBehaviour
-{
-    private Scenes _scenes;
-    
-    
-    public void Update()
+    public class GameManager: MonoBehaviour
     {
-        if (ScoreManager.score >= 10)
-        {
-            SceneManager.LoadScene($"WinScene");
-        }
+        private Scenes _scenes;
         
-        if (HealthManager.lives <= 0)
+        public void Update()
         {
-            SceneManager.LoadScene($"MainMenu");
+            if (ScoreManager.score >= 10)
+            {
+                SceneManager.LoadScene($"WinScene");
+            }
+        
+            if (HealthManager.lives <= 0)
+            {
+                SceneManager.LoadScene($"MainMenu");
+            }
         }
-    }
     
+    }
 }
