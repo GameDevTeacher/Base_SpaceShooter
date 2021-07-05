@@ -1,27 +1,16 @@
-using System;
-using UnityEditor.UIElements;
 using UnityEngine;
-
 
 namespace Enemy
 {
-    
     public class Shoot : MonoBehaviour
     {
-    
         public Transform gunPoint;
         public GameObject bullet;
         
-        
         public Sprite bulletGraphics;
-
-        public  EnumField _field;
-      
         
-        // Update is called once per frame
         public void Start()
         {
-            
             InvokeRepeating(nameof(Shooting), 2f, 2f);
         }
 

@@ -1,24 +1,34 @@
 using Systems;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 namespace Enemy
 {
     public class Spawner : MonoBehaviour
     {
-
         public ObjectPooler pooler;
 
         public GameObject[] spawnPoints;
 
+        public float spawnTime;
+        public float spawnBuffer;
+        public void Start()
+        {
+            InvokeRepeating(nameof(SpawnEnemy), spawnBuffer, spawnTime);
+        }
 
         public void SpawnEnemy()
         {
-            pooler.GetPooleObject();
+           var obj = pooler.GetPooleObject();
+           
+           obj.SetActive(true);
+           obj.transform.position =
+               spawnPoints[RandomSpawn()].transform.position;
         }
-        
-        // TODO: Get Object from Object Pooler
-        // TODO: Activate object
-        // TODO: Position at random Spawnpoint
 
+        private int RandomSpawn()
+        {
+            return Random.Range(0, spawnPoints.Length);
+        }
     }
 }
