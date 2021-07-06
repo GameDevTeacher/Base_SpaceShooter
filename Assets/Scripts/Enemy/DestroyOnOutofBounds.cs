@@ -1,28 +1,15 @@
 using System;
+using Systems;
 using UnityEngine;
 
 namespace Enemy
 {
     public class DestroyOnOutOfBounds : MonoBehaviour
     {
-        public bool noLongerVisible = false;
-
-        public bool visible = false;
-        private void OnBecameVisible()
+        private void Update()
         {
-            visible = true;
+            if (transform.position.y < -10f)
+                ObjectPooler.ReturnToPool(gameObject);
         }
-
-        private void OnBecameInvisible()
-        {
-            if (visible)
-            {
-                
-                gameObject.SetActive(false);
-            }
-        }
-        
-        
-        
     }
 }

@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace Player
 {
-    public class Blast : MonoBehaviour
+    public sealed class Blast : MonoBehaviour
     {
         public Transform gunPoint;
         public Sprite bulletGraphics;
@@ -11,12 +11,12 @@ namespace Player
         private CircleCollider2D _blastCollider;
         private SpriteRenderer _blastRenderer;
 
-        [SerializeField] private float MAXRadius = 10;
+        [SerializeField] private float MAXRadius = 20;
         [SerializeField] private float _expansionRate = 0.05f;
 
-        [SerializeField] private Vector3 _transform;
+        private Vector3 _transform;
 
-        private bool canBlast;
+        private bool _canBlast;
         private void Start()
         {
             VariableInitialize();
@@ -25,12 +25,18 @@ namespace Player
 
         private void Update()
         {
-            if (_input.Shoot && !canBlast)
+            if (_input.Shoot && !_canBlast)
             {
-                canBlast = true;
+                _canBlast = true;
             }
             
-            if (!canBlast) return;
+            if (!_canBlast) return;
+            
+            RunSpecial();
+        }
+
+        private void RunSpecial()
+        {
             BlastInitializer();
             BlastAttack();
             gunPoint.transform.localScale = _transform;
@@ -68,7 +74,7 @@ namespace Player
             _blastCollider.enabled = false;
             _blastRenderer.sprite = null;
             _transform = new Vector3(1f, 1f, 1f);
-            canBlast = false;
+            _canBlast = false;
         }
 
 

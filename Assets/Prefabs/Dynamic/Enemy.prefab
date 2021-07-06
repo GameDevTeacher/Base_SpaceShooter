@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5417536115495915586}
   - component: {fileID: 883437695031009591}
   - component: {fileID: 1882561541328731683}
+  - component: {fileID: 6910413093348361831}
   - component: {fileID: 5417536115495915589}
   - component: {fileID: 5417536115495915640}
   m_Layer: 0
@@ -119,6 +120,19 @@ MonoBehaviour:
   shootTime: 2
   startBuffer: 2
   tag: EnemyProjectile
+--- !u!114 &6910413093348361831
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5417536115495915585}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc93e180fb9a64e4ea1db71dbfd3b138, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  visible: 0
 --- !u!50 &5417536115495915589
 Rigidbody2D:
   serializedVersion: 4

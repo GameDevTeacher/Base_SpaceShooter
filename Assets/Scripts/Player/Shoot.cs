@@ -9,16 +9,16 @@ namespace Player
         public GameObject bullet;
         public Sprite bulletGraphics;
 
-        protected Input input;
+        private Input _input;
 
         private void Start()
         {
-            input = GetComponent<Input>();
+            _input = GetComponent<Input>();
         }
 
         private void Update()
         {
-            if (!input.Shoot) return;
+            if (!_input.Shoot) return;
             
             var clone = Instantiate(bullet, gunPoint.position, quaternion.identity);
             clone.GetComponent<SpriteRenderer>().sprite = bulletGraphics;
