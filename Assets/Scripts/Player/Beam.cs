@@ -1,4 +1,3 @@
-using System;
 using Systems;
 using UnityEngine;
 
@@ -10,7 +9,6 @@ namespace Player
         public Sprite bulletGraphics;
 
         private Input _input;
-        private CapsuleCollider2D _blastCollider;
         private SpriteRenderer _blastRenderer;
 
         private float _attackTime;
@@ -29,51 +27,43 @@ namespace Player
 
         private void Update()
         {
-            
-            
             if (_input.Shoot && !_canBlast)
             {
                 _canBlast = true;
             }
             
             if (!_canBlast) return;
-            RayCastTest();
             RunSpecial();
         }
 
-        private void RayCastTest()
+        private void BeamController()
         {
             if (Camera.main is null) return;
-            var top = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, 0f));
+            var screenBounds = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, 0f));
             
             var position = transform.position;
-            var MaxDistance = Vector3.Distance(new Vector3(position.x, top.y, 0f), position);
+            var maxDistance = Vector3.Distance(new Vector3(position.x, screenBounds.y, 0f), position);
             
             // Increase Distance from Position to Top.y over time)
-            var dir = new Vector3(position.x, top.y, 0f);
+            var dir = new Vector3(position.x, screenBounds.y, 0f);
+            var lineCastHit = Physics2D.Linecast(gunPoint.position, dir);
             
-            // print("Distance to other: " + MaxDistance);
+            _blastRenderer.size = new Vector2(0.4f, maxDistance);
             
-            var hit = Physics2D.Raycast(position, Vector2.up, MaxDistance);
-            var hot = Physics2D.Linecast(gunPoint.position, dir);
+            if (lineCastHit.collider == null) return;
             
-            _blastRenderer.size = new Vector2(0.4f, MaxDistance);
-            
-            if (hot.collider == null) return;
-
-            print("I hit:" + hot.transform.name);
-            if (hot.collider.CompareTag("Enemy"))
-            {
-                print("I hit:" + hot.collider.name);
-                ObjectPooler.ReturnToPool(hot.collider.gameObject);
-            }
-            
-            Debug.DrawLine(position, new Vector3(position.x, top.y, 0f));
+                if (lineCastHit.collider.CompareTag("Enemy"))
+                {
+                    ObjectPooler.ReturnToPool(lineCastHit.collider.gameObject);
+                }
+                
+                Debug.DrawLine(position, new Vector3(position.x, screenBounds.y, 0f));
         }
         private void RunSpecial()
         {
             BeamInitializer();
             BeamAttack();
+            BeamController();
             
             gunPoint.transform.localScale = new Vector3(Mathf.PingPong(Time.time*10f, 1f)+0.5f, 1f, 1f);
         }
@@ -88,7 +78,6 @@ namespace Player
         
         private void BeamInitializer()
         {
-            _blastCollider.enabled = false;
             _blastRenderer.sprite = bulletGraphics;
         }
 
@@ -106,7 +95,6 @@ namespace Player
         
         private void BeamReset()
         {
-            _blastCollider.enabled = false;
             _blastRenderer.sprite = null;
             _canBlast = false;
             _attackTime = attackTimeMAX;
@@ -115,7 +103,6 @@ namespace Player
         private void VariableInitialize()
         {
             _input = GetComponent<Input>();
-            _blastCollider = gunPoint.GetComponent<CapsuleCollider2D>();
             _blastRenderer = gunPoint.GetComponent<SpriteRenderer>();
         }
     }

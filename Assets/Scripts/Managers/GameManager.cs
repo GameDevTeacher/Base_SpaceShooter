@@ -1,22 +1,28 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
+using UnityEngine.InputSystem;
 
 namespace Managers
 {
     public class GameManager: MonoBehaviour
     {
+        [Scene] public  string winScene, mainMenu;
+
         public void Update()
         {
             if (ScoreManager.Score >= 10)
             {
-                SceneManager.LoadScene($"WinScene");
+                SceneController.LoadSceneStatic(winScene);
             }
         
             if (HealthManager.lives <= 0)
             {
-                SceneManager.LoadScene($"MainMenu");
+                SceneController.LoadSceneStatic(mainMenu);
+            }
+
+            if (Keyboard.current.escapeKey.wasPressedThisFrame)
+            {
+                SceneController.LoadSceneStatic(mainMenu);
             }
         }
-    
     }
 }
