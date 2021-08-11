@@ -30,7 +30,7 @@
 **Space background**
 - A Simple black background with some stars in the distance. Must be “Loopable” meaning that we should be able to repeat the background without seeing it crashing with itself. The Stars should be white so we can change colour in game.
 
-**Small Explosion **
+**Small Explosion**
 (For Laser hits)
 - This is a small and simple Puff explosion which is left after a projectile hits an object. Must be animated, 2-5 frames.
 
