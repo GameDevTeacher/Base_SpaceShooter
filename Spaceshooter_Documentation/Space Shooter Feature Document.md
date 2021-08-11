@@ -1,7 +1,7 @@
 
 # Space Shooter Feature Documents
 
-### Actions 
+## Actions 
 **Auto Shoot** 
 - At a certain interval, projectiles are shot from the front of the ship at a certain speed.
 
@@ -17,7 +17,7 @@
 	- Health packs - Return 20-30 % of the health
 	- Shield - Makes the player Invulnerable to damage for 3 Seconds - OR - makes the player Invulnerable to 5 hits.
 
-### Challenges
+## Challenges
 **Enemies**
 - Enemies Spawn at a set interval, this interval can decrease in time over the course of the game.
 	- Enemies shoot bullet at a set Interval.
@@ -28,7 +28,7 @@
 	- Enemy projectiles take away 1 point of health from the player.
 	- Enemy Projectiles are “destroyed” when they hit the enemy of are affected by the Blast attack.
 
-### Systems
+## Systems
 **Health**
 - The Health system will track the players health
 	- Health will be affected by enemy projectiles (remove 1 life)
@@ -47,7 +47,7 @@
 	- Enemies will be spawned from a set of spawn points
 	- Enemies will be spawned at a set rate which will increase with time.
 
-### Upgrades
+## Upgrades
 **Speed Shot**
 This upgrade doubles the rate of fire of the player.
 
