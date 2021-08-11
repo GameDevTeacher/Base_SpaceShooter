@@ -1,5 +1,6 @@
 # Space Shooter Asset Document
-### Sprites
+
+## Sprites
 **Player**
 - The player will be a sleek and modern 70’s inspired shape-ship feel. It will also be compact like a small personal cruiser with white and blue colours.
 
@@ -39,7 +40,7 @@
 - This if for ships when they die, a proper space explosion. ((There is no fire in space)). This must be animated, and have between 5-10 frames of animation. 
   - _Reference: Gundam Space Explosion_
 
-### Sounds
+## Sounds
 **Background Music**
 - A catchy 70’s inspired sci fi audio clip, must be at least 1-2 minutes in length and should loop without issue.
 
