@@ -49,23 +49,23 @@
 
 ## Upgrades
 **Speed Shot**
-	This upgrade doubles the rate of fire of the player.
+- This upgrade doubles the rate of fire of the player.
 
 **Strong/Unstable Shot**
-	This upgrade increases the damage of the player projectile. 
-	_Or_ - Increases the hit-box of the projectile so that it can hit enemies who are too close horizontally.
+- This upgrade increases the damage of the player projectile. 
+- _Or_ - Increases the hit-box of the projectile so that it can hit enemies who are too close horizontally.
 
 **DubleShot**
-	This upgrade changes the shooting pattern of the player.
-	Two bullets are shot upwards.
+- This upgrade changes the shooting pattern of the player.
+- Two bullets are shot upwards.
 
 **TripleShot**
-	This upgrade changes the shooting pattern of the player.
-	One Bullet is shot upwards and two are shot diagonally.
+- This upgrade changes the shooting pattern of the player.
+- One Bullet is shot upwards and two are shot diagonally.
 
 **QuadShot**
-	This upgrade changes the shooting pattern of the player.
-	Two Bullets are shot upwards and two are shot diagonally.
+- This upgrade changes the shooting pattern of the player.
+- Two Bullets are shot upwards and two are shot diagonally.
 
 **BackShot**
-	An additional bullet is fired from the back of the ship allowing you to take down enemies behind you.
+- An additional bullet is fired from the back of the ship allowing you to take down enemies behind you.
