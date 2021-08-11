@@ -1,5 +1,5 @@
 
-# Space Shooter Feature Documents
+# Space Shooter Feature Document
 
 ## Actions 
 **Auto Shoot** 
