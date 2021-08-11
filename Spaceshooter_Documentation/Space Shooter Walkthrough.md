@@ -61,17 +61,20 @@ So now with ideas and inspiration we will look at the Game Design Document that 
 ## Part 2: The Game Design Documents
 This step is very important, again, it is when we coalesce our planning, ideation, into a production document which outlines every part of the game, a recipe if you will. 
 
-If you give this document to three different teams, they should be able to make inherently the same game. 
+If you give these documents to three different teams, they should be able to make inherently the same game. 
 > (Note that this Game Design Document is very short and light on details in comparison to more professional documents, but this is a nice place to start)
 > > (( Also note that when talking about mechanics and assets we always include a details on what the mechanic’s purpose is and what its going to do as finely detailed as we can, and with assets we must describe what we want to make it easier for the Artists making them))
 
-### Pitch
+### Concept Document
+This is a Concept Document and contains the basics of the game idea and thus, concept. With a Pitch and Description, it may also contain Narrative if there is one.
+
+#### Pitch
 > _Space Pirates is a game where you advance through a gauntlet of enemy vessels that have come to claim your treasure. Defeat them to become the Pirate King._
 
-### Description
+#### Description
 Space Pirates is a Space Shooter style game for Mobile, Web and Desktop Computers. Utilising the classic style of the genre we are shining a light on the very core and what makes the genre great: Tight movement skills that allows the player to delicately navigate a maze of bullets hurled at the player by enemies.
 
-Players will be auto shooting their standard projectiles, which can be upgraded, and they will have the ability to charge up a super attack which can destroy enemy projectiles.
+Players will be auto shooting single laser projectiles, which can be upgraded to many colourful variations like double-shot and spread-shot. The Players will also have the ability to charge up a super attack which can destroy enemy projectiles and vast amounts of enemies.
 
 The point of the game is to survive for X minutes, or in Endless Mode, survive as long as possible to get the highest score.
 
