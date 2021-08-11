@@ -61,8 +61,8 @@
   - Reference: Gundam Beam Attacks
 
 **Small Explosion sound**
-This is for the small puff explosion when an object is hit with a projectile. 0.5-1 Seconds.
+- This is for the small puff explosion when an object is hit with a projectile. 0.5-1 Seconds.
 
 **Big Explosion Sound**
-This is for when a ship explodes. Should be energetic but also feel a bit mechanical, like things breaking up amidst the energy. 1-1.5 seconds
+- This is for when a ship explodes. Should be energetic but also feel a bit mechanical, like things breaking up amidst the energy. 1-1.5 seconds
 
