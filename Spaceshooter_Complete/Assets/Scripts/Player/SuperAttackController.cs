@@ -19,7 +19,7 @@ namespace Player
         public float blastCharge; 
         public float chargeAmount;
         
-        private Beam _beam; private Blast _blast; private static AutoShoot _autoShoot;
+        private Beam _beam; private Blast _blast; private AutoShoot _autoShoot;
         
         // Start is called before the first frame update
         private void Start()
@@ -77,7 +77,7 @@ namespace Player
             charge += chargeAmount * Time.deltaTime;
         }
 
-        public static void SetAuto(bool onOff)
+        public void SetAuto(bool onOff)
         {
             _autoShoot.enabled = onOff;
         }

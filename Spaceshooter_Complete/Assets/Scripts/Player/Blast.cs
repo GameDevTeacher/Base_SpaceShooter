@@ -78,7 +78,10 @@ namespace Player
             _blastRenderer.enabled = false;
             _transform = new Vector3(1f, 1f, 1f);
             runCode = false;
-            SetAuto(true);
+            
+            TryGetComponent(out SuperAttackController superAttackController);
+            superAttackController.SetAuto(true);
+            
             canAttack = false;
         }
 

@@ -90,7 +90,10 @@ namespace Player
             _blastRenderer.enabled = false;
             _attackTime = attackTimeMAX;
             runCode = false;
-            SetAuto(true);
+            
+            TryGetComponent(out SuperAttackController superAttackController);
+            superAttackController.SetAuto(true);
+            
             canAttack = false;
         }
 

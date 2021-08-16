@@ -9,6 +9,7 @@ TagManager:
   - Enemy
   - Beam
   - Blast
+  - Explosion
   layers:
   - Default
   - TransparentFX

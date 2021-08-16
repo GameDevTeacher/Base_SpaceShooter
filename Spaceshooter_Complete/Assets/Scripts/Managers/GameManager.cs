@@ -6,10 +6,11 @@ namespace Managers
     public class GameManager: MonoBehaviour
     {
         [Scene] public string winScene, mainMenu;
-        
+
+        [SerializeField] private float winCondition;
         public void Update()
         {
-            if (ScoreManager.Score >= 10)
+            if (ScoreManager.Score >= winCondition)
             {
                 SceneController.LoadSceneStatic(winScene);
             }
