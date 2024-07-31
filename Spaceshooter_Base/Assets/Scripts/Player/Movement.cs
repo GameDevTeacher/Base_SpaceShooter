@@ -30,7 +30,7 @@ namespace Player
             
         private void FixedUpdate()
         {
-            _rigidbody2D.velocity = _input.MoveVector.y > 0 ? _input.MoveVector * moveSpeed : _input.MoveVector * _slowSpeed;
+            _rigidbody2D.linearVelocity = _input.MoveVector.y > 0 ? _input.MoveVector * moveSpeed : _input.MoveVector * _slowSpeed;
             // This functions gives us aq physical velocity in the movement direction
                 // It also checks wether we are going uip or down and adresses the speed to be slow or fast.
         }
